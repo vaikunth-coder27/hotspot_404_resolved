@@ -1,0 +1,50 @@
+{%extends "base.html"%}
+
+{%block content%}
+<link rel="stylesheet" href="{{url_for('static',filename='login.css')}}">
+<div class="intro">
+    <div style="font-size: 50px;font-family:'Courier New', Courier, monospace;color: white;">
+        Sign in to
+    </div>
+    <img src="{{url_for('static',filename='images/v111_30.png')}}" style="margin-left: 5%; position: fixed;" width="20%" height="50%">
+    <div class="title">
+        HOTSPOT
+    </div>
+    <form method="POST" class="forms">
+        {{ form.hidden_tag() }}
+    
+        <!--{{ form.email.label }}--> 
+        {% if form.email.errors %}
+            {{ form.email(style='border-color:red;',class="inputbox") }} 
+            <div>
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.email(placeholder='Email-ID',class="inputbox") }}
+        {% endif %}
+        <br/><br/>
+
+        <!--{{ form.password.label }}-->
+        {% if form.password.errors %}
+            {{ form.password(style='border-color:red;',class="inputbox") }} 
+            <div>
+                {% for error in form.password.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.password(placeholder='Password',class="inputbox") }}
+        {% endif %}
+        <br/><br/>
+
+        {{ form.submit(class="submitbutton") }}
+        <br/><br/>
+    </form>
+    <a href="{{url_for('forget_password')}}" style="margin-left: 45%; font-size: 20px;color: #908AFF;text-decoration: none;">Forget Password</a>
+
+    <p style="color: white;float: right;margin-right: 30%;margin-top: 5%;">Don't have an account? <a href="{{ url_for('signup') }}" style="color: #908AFF;text-decoration: none;">Create one!</a></p>
+
+</div>
+{%endblock content%}

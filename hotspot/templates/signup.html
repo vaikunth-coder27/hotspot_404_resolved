@@ -1,0 +1,129 @@
+{%extends "base.html"%}
+
+{%block content%}
+<link rel="stylesheet" href="{{url_for('static',filename='signup.css')}}">
+<div class="intro">
+    <div style="font-size: 50px;font-family:'Courier New', Courier, monospace;color: white; position:fixed;">
+        Sign in to
+    </div>
+    <img src="{{url_for('static',filename='images/v111_30.png')}}" style="margin-left: 5%; position: fixed; margin-top: 5%;" width="20%" height="40%">
+    <div class="title">
+        HOTSPOT
+    </div>
+    <form method="POST" class="forms">
+        {{ form.hidden_tag() }}
+    
+        <!--{{ form.email.label }}-->
+        {% if form.email.errors %}
+            {{ form.email(style='border-bottom-color:red;',class="inputbox") }} 
+            <span style="font-size: small; color: red;">
+                {% for error in form.email.errors %}
+                {%if error%}
+                    {{ error }}
+                {%endif%}
+                {% endfor %}
+            </span>
+        {% else %}
+            {{ form.email(placeholder='     Email-ID',class="inputbox") }}
+        {% endif %}
+        <br/><br/>
+
+        <!--{{ form.username.label }}-->
+        {% if form.username.errors %}
+            {{ form.username(style='border-color:red;',class="inputbox") }} 
+            <span style="font-size: small; color: red;">
+                {% for error in form.username.errors %}
+                {%if error%}
+                    {{ error }}
+                    {%endif%}
+                {% endfor %}
+            </span>
+        {% else %}
+            {{ form.username(placeholder='     Username',class="inputbox") }}
+        {% endif %}
+        <br/><br/>
+        <!--{{ form.dob.label }}    -->
+        {% if form.dob.errors %}
+            {{ form.dob(style='border-color:red;', class='datepicker inputbox') }} 
+            <span style="font-size: small; color: red;">
+                {% for error in form.dob.errors %}
+                {%if error%}
+                    {{ error }}
+                    {%endif%}
+                {% endfor %}
+            </span>
+        {% else %}
+            {{ form.dob(class='datepicker inputbox',placeholder='     DOB') }}
+        {% endif %}
+        <p style="font-size: small;">D.O.B</p>
+        
+        <!--{{ form.mobile.label }}-->
+        {% if form.mobile.errors %}
+            {{ form.mobile(style='border-color:red;',class="inputbox") }} 
+            <span style="font-size: small; color: red;">
+                {% for error in form.mobile.errors %}
+                {%if error%}
+                    {{ error }}
+                    {%endif%}
+                {% endfor %}
+            </span>
+        {% else %}
+            {{ form.mobile(placeholder='     Mobile Number',class="inputbox") }}
+        {% endif %}
+        <br/><br/>
+        
+        <!--{{ form.location.label }}-->
+        {% if form.location.errors %}
+            {{ form.location(style='border-color:red;',class="inputbox") }} 
+            <span style="font-size: small; color: red;">
+                {% for error in form.location.errors %}
+                {%if error%}
+                    {{ error }}
+                    {%endif%}
+                {% endfor %}
+            </span>
+        {% else %}
+            {{ form.location(placeholder='     Location',class="inputbox") }}
+        {% endif %}
+        <br/><br/>
+
+        <!--{{ form.password.label }}-->
+        {% if form.password.errors %}
+            {{ form.password(style='border-color:red;',class="inputbox") }} 
+            <span style="font-size: small; color: red;">
+                {% for error in form.password.errors %}
+                {%if error%}
+                    {{ error }}
+                    {%endif%}
+                {% endfor %}
+            </span>
+        {% else %}
+            {{ form.password(placeholder='     Password',class="inputbox") }}
+        {% endif %}
+        <br/><br/>
+        <!--{{ form.confirm_password.label }}-->
+        {% if form.confirm_password.errors %}
+            {{ form.confirm_password(style='border-color:red;',class="inputbox") }} 
+            <span style="font-size: small; color: red;">
+                {% for error in form.confirm_password.errors %}
+                {%if error%}
+                    {{ error }}
+                    {%endif%}
+                {% endfor %}
+            </span>
+        {% else %}
+            {{ form.confirm_password(placeholder='     Confirm Password',class="inputbox") }}
+        {% endif %}
+        <br/><br/>
+
+        {{ form.submit(class='submitbutton') }}
+        <br/><br/>
+        
+    </form>
+    <small class="text-muted" style="margin-left: 5%; font-size: 20px;">
+        Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}" style="color: #908AFF;">Sign In</a>
+    </small>
+    
+</div>
+
+{%endblock content%}

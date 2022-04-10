@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+  </head>
+  <body style="background-color: #09102A;"  vlink="#908AFF">
+    <nav class="navbar" >
+        <div class="navbar-brand">
+            <a  href="{{ url_for('dashboard')}}">
+                <ion-icon name="home-outline" style="font-size: 2em;"></ion-icon>
+            </a>
+        
+            <a href="{{ url_for('search')}}">
+                <ion-icon name="search-outline" style="font-size: 2em;"></ion-icon>
+            </a>
+            <a href="{{ url_for('newpost')}}">
+                <ion-icon name="add-circle-outline" style="font-size: 2em;"></ion-icon>
+            </a>
+            <a href="{{ url_for('cart')}}">
+                <ion-icon name="cart-outline" style="font-size: 2em;"></ion-icon>
+            </a>
+            <a href="{{ url_for('profile')}}">
+                <ion-icon name="person-outline" style="font-size: 2em;"></ion-icon>
+            </a>
+        
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('logout')}}">
+                    <ion-icon name="log-out-outline" style="font-size: 2em;"></ion-icon>
+                </a>
+            {% endif %}
+        
+        
+        </div>
+    </nav>
+
+    <div class="flash-message">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    </body>
+</html>

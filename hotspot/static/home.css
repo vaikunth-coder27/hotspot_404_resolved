@@ -1,0 +1,27 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: #09102A;
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: #09102A;
+    border: 1px solid #09102A;
+    padding: 20px;
+    overflow: hidden;
+  }
+.detailsbox{
+    width: 240px;
+    height: 168px;
+    background: rgba(195,255,148,1);
+    opacity: 1;
+    bottom: 10%;
+    position: relative;
+    left: 0px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow: scroll;
+}
+.details{
+    padding: 10%;
+}

@@ -1,0 +1,63 @@
+.inputbox{
+    margin-left: 35%;
+    width: 448px;
+    padding-left: 2%;
+    height: 78px;
+    background: rgba(239,239,255,1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size: xx-large;
+    
+  }
+.title {
+    width: 488px;
+    color: rgba(255,255,255,1);
+    position: fixed;
+    top: 512px;
+    left: 134px;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: Regular;
+    font-size: 96px;
+    opacity: 1;
+    text-align: left;
+}
+    
+.intro {
+    padding: 2% 2% 2% 2%;
+    border-radius: 15px;
+    border: none;
+    position: fixed;
+    box-shadow:  0 3px  rgb(0, 0, 0);
+    background-color: #09102A;
+    
+    color: black;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.forms{
+    margin-top: 5%;
+}
+.submitbutton{
+    margin-left: 40%;
+    width: 300px;
+    height: 50px;
+    background: rgb(255, 252, 101);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size: xx-large;
+}

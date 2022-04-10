@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    {% for i in rsrcs %}
+        <div>
+            {{i.title}} <br/>
+            {{i.description}} <br/>
+            {% if i.id not in cart_items %}
+                <a href="{{ url_for('add_to_cart', id_=i.id) }}">Add to Cart</a>
+            {% endif %}
+        </div>
+        <hr/>
+    {% endfor %}
+{% endblock content %}
