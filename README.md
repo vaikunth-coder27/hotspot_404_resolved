@@ -17,3 +17,5 @@
 
 
 Deployed @ https://vrhotspot.pythonanywhere.com/
+
+Demo video @ https://drive.google.com/file/d/1aqaqd5T6tEzNhTEK7D2Cie8bpHettGAB/view?usp=sharing
